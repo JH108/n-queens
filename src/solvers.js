@@ -13,10 +13,27 @@
 
 // return a matrix (an array of arrays) representing a single nxn chessboard, with n rooks placed such that none of them can attack each other
 
-
+//[0,0]
+//[0,0]
+window.rookBoardPopulator = function(n, board, loopSize) {
+  var rows = board.rows();
+  for (var i = 0; i < loopSize; i++) {
+    // Place rook in correct location
+    if (n - 1) {
+      rookBoardPopulator(n - 1, board, loopSize - i);
+    }
+  }
+};
 
 window.findNRooksSolution = function(n) {
   var solution = undefined; //fixme
+  var solved = false;
+
+  while (!solved) {
+    var board = new Board({n: n});
+    rookBoardPopulator(n, board, (n * 2 - (n - 1)));
+    solved = true;
+  }
 
   console.log('Single solution for ' + n + ' rooks:', JSON.stringify(solution));
   return solution;
