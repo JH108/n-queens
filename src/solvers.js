@@ -41,7 +41,7 @@ window.countNRooksSolutions = function(n) {
   var board = new Board({n: n});
 
   var findSolution = function(board, cols, row) {
-    if (row === cols){
+    if (row === cols) {
       solutionCount++;
       return;
     }
@@ -65,13 +65,13 @@ window.findNQueensSolution = function(n) {
   var solution = new Board({n: n});
 
   var findSolution = function(board, cols, row) {
-    if (row === cols){
+    if (row === cols) {
       return true;
     }
 
     for (var i = 0; i < cols; i++) {
       board.togglePiece(row, i);
-      if (!board.hasAnyQueensConflicts()){
+      if (!board.hasAnyQueensConflicts()) {
         if (findSolution(board, cols, row + 1)) {
           return true;
         }
@@ -91,7 +91,7 @@ window.countNQueensSolutions = function(n) {
   var board = new Board({n: n});
 
   var findSolution = function(board, cols, row) {
-    if (row === cols){
+    if (row === cols) {
       solutionCount++;
       return;
     }
