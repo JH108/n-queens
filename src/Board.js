@@ -86,8 +86,8 @@
       var rowLength = row.length;
       var counter = 0;
 
-      for(var i = 0; i < rowLength; i++) {
-        if(row[i]) {
+      for (var i = 0; i < rowLength; i++) {
+        if (row[i]) {
           counter++;
         }
       }
@@ -115,7 +115,7 @@
       var rows = this.rows();
       var column = [];
       var counter = 0;
-      for(var i = 0; i < rows.length; i++) {
+      for (var i = 0; i < rows.length; i++) {
         column.push(rows[i][colIndex]);
       }
       column.forEach(function(element) {
