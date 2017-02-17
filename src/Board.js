@@ -83,12 +83,14 @@
     // test if a specific row on this board contains a conflict
     hasRowConflictAt: function(rowIndex) {
       var row = this.rows()[rowIndex];
+      var rowLength = row.length;
       var counter = 0;
-      row.forEach(function(element) {
-        if (element) {
+
+      for(var i = 0; i < rowLength; i++) {
+        if(row[i]) {
           counter++;
         }
-      });
+      }
       return counter > 1;
     },
 
